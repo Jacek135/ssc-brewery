@@ -1,4 +1,4 @@
-package guru.sfg.brewery.web.controllers;
+package guru.sfg.brewery.web.brewery.web.controllers;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;

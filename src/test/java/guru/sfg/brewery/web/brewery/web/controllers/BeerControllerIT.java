@@ -1,4 +1,4 @@
-package guru.sfg.brewery.web.controllers;
+package guru.sfg.brewery.web.brewery.web.controllers;
 
 import guru.sfg.brewery.domain.Beer;
 import guru.sfg.brewery.repositories.BeerRepository;
@@ -19,7 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Created by jt on 6/12/20.
  */
 @SpringBootTest
-public class BeerControllerIT extends BaseIT {
+public class BeerControllerIT extends BaseIT{
 
     @Autowired
     BeerRepository beerRepository;
@@ -28,11 +28,10 @@ public class BeerControllerIT extends BaseIT {
     @Nested
     class InitNewForm{
 
-        @ParameterizedTest(name = "#{index} with [{arguments}]")
-        @MethodSource("guru.sfg.brewery.web.controllers.BeerControllerIT#getStreamAllUsers")
-        void initCreationFormAuth(String user, String pwd) throws Exception {
+        @Test
+        void initCreationFormAuth() throws Exception {
 
-            mockMvc.perform(get("/beers/new").with(httpBasic(user, pwd)))
+            mockMvc.perform(get("/beers/new").with(httpBasic("spring", "guru")))
                     .andExpect(status().isOk())
                     .andExpect(view().name("beers/createBeer"))
                     .andExpect(model().attributeExists("beer"));

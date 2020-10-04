@@ -1,4 +1,4 @@
-package guru.sfg.brewery.web.controllers;
+package guru.sfg.brewery.web.brewery.web.controllers;
 
 import guru.sfg.brewery.repositories.BeerInventoryRepository;
 import guru.sfg.brewery.repositories.BeerRepository;
